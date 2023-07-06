@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+
+</head>
+<body>
+  <div class="content">
+    <div class="container">
+      <div class="img">
+        <img src="logo.svg" alt="">
+      </div>
+      
+      <h2>
+         We are launching <span>soon!</span>
+      </h2>
+      <p>subscribe and get notified</p>
+      <form action="smile.html" onsubmit="return validator()">
+        <div class="form">
+          <div class="email">
+            <input type="text" placeholder="Your email address.." id="ver">
+            <div id="para"></div>
+          </div>
+          <button type="submit">Notify Me</button>
+        </div>
+      </form>
+      
+      
+      <div class="img2">
+        <img src="illustration-dashboard.png" alt="">
+      </div>
+      <div class="footer">
+        <div class="links">
+         <div class="icon1"><ion-icon name="logo-twitter"></ion-icon></div>
+         <div class="icon1"><ion-icon name="logo-facebook"></ion-icon></div>
+         <div class="icon1"><ion-icon name="logo-instagram"></ion-icon></div>
+         <ion-icon src="podium.svg"></ion-icon>
+        </div>
+
+        <p>
+          &copy; Copyright Ping. All rights reserved.
+          
+
+        </p>
+        
+       
+      </div>
+
+    </div>
+    
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+  let email = document.querySelector("#ver");
+  let para = document.querySelector("#para");
+  email.addEventListener("input", noError);
+
+function validator() {
+  
+
+  if (email.value === "" || email.value === null) {
+    para.innerHTML = "Email cannot be empty";
+    email.style.border = "1px solid red";
+    para.style.display = "block";
+    return false;
+  }
+
+  if (email.value.length <= 6) {
+    email.style.border = "1px solid red";
+    para.innerHTML = "Invalid Email";
+    para.style.display = "block";
+    return false;
+  }
+}
+function noError(){
+
+
+  if (email.value.length > 6) {
+    email.style.border = "1px solid hsl(0, 0%, 59%)";
+    para.style.display = "none";
+    return false;
+  }
+}
+
+
+  
+</script>
+</body>
+</html>
